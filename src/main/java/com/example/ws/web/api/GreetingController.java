@@ -25,6 +25,7 @@ public class GreetingController {
 	private static Long nextId;
 	private static Map<Long,Greeting> greetingMap;
 	
+	//This is static method to save greetings
 	private static Greeting save(Greeting greeting){
 		if (greetingMap == null){
 			greetingMap = new HashMap<Long,Greeting>();

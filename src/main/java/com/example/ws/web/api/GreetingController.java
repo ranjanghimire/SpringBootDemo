@@ -21,6 +21,7 @@ import com.example.ws.model.Greeting;
 @RestController
 public class GreetingController {
 
+	//Declare id and Map to store greetings
 	private static Long nextId;
 	private static Map<Long,Greeting> greetingMap;
 	

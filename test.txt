@@ -1,4 +1,0 @@
-This is just a test.
-This is second line of text for fix20.
-This is third line of text for fix21.
-This is for hotfix.

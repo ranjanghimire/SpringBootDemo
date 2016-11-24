@@ -87,6 +87,14 @@ public class GreetingController {
 		return new ResponseEntity<Greeting> (savedGreeting, HttpStatus.CREATED);
 	}
 	
-	
+	@RequestMapping(value="/api/greetings/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Greeting> updateGreeting(@RequestBody Greeting greeting){
+		Greeting updateGreeting = save(greeting);
+		if (updateGreeting == null) {
+			return new ResponseEntity<Greeting> (HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		
+		return new ResponseEntity<Greeting> (updateGreeting, HttpStatus.OK);
+	}
 
 }

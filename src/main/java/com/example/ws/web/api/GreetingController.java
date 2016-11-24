@@ -33,6 +33,20 @@ public class GreetingController {
 			greetingMap = new HashMap<Long,Greeting>();
 			nextId = 1L;
 		}
+		
+		//If update ..
+		if (greeting.getId() != null){ 
+			Greeting oldGreeting = greetingMap.get(greeting.getId());
+			if (oldGreeting == null){
+				return null; //if the particular greeing is not present, no update.
+			}
+			//remove the old greeting and put the new greeting. (update simulation)
+			greetingMap.remove(greeting.getId());
+			greetingMap.put(greeting.getId(), greeting);
+			return greeting;
+		}
+		
+		//If create.. 
 		greeting.setId(nextId);
 		nextId += 1;
 		greetingMap.put(greeting.getId(), greeting);
